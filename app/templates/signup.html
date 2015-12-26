@@ -1,0 +1,54 @@
+<div class="row">
+	<div class="col-md-6">
+		<div class="row">
+			<h2>Fill in the details below</h2>
+			<br>
+		</div>
+		<div class="row">
+			<form name="signupForm">
+		   		<div class="row">
+		    		<div class="col-md-5 text-right"><label for="firstName">First Name:</label></div>
+		    		<div class="col-md-7 text-left"><input id="firstName" type="text" required placeholder="John" ng-model="user.firstname"/></div>
+		    	</div>
+		    	<br>
+		    	<div class="row">
+		    		<div class="col-md-5 text-right"><label for="lastName">Last Name:</label></div>
+		    		<div class="col-md-7 text-left"><input id="lastName" type="text" required placeholder="Doe" ng-model="user.lastname"/></div>
+		    	</div>
+		    	<br>
+		    	<div class="row">
+		    		<div class="col-md-5 text-right"><label for="city">Enter City:</label></div>
+		    		<div class="col-md-7 text-left"><input id="city" type="text" required placeholder="Enter city" ng-model="user.city"/></div>
+		    	</div>
+		    	<br>
+		    	<div class="row">
+		    		<div class="col-md-5 text-right"><label for="password1">Password:</label></div>
+		    		<div class="col-md-7 text-left"><input id="password1" type="password" required/></div>
+		    	</div>
+		    	<br>
+		    	<div class="row">
+		    		<div class="col-md-5 text-right"><label for="password2">Retype Password:</label></div>
+		    		<div class="col-md-7 text-left"><input id="password2" type="password" required ng-model="user.password"/></div>
+		    	</div>
+		    	<br>
+		    	<div class="row">
+		    		<div class="col-md-5 text-right"><label for="image">Profile Image:</label></div>
+		    		<div class="col-md-7 text-left"><input id="image" type="url" required placeholder="url of image.." ng-model="user.image"/></div>
+		    	</div>
+		    	<br>
+				<button value="submit">Submit</button>
+			</form>
+
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="row text-center">
+			<h2>{{user.firstname}}'s profile photo</h2>
+			<br>
+		</div>
+		<div class="row" style="padding:0px 20px 0px 0px">
+			<img  style="display:block;margin:0 auto" class="img-responsive" ng-src="{{user.image}}">
+		</div>
+	</div>
+</div>
+

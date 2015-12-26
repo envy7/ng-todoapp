@@ -1,0 +1,27 @@
+<!doctype = html>
+<html lang="en" ng-app="todoApp">
+<head>
+	<title>ToDoApp</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/app.css"/>
+</head>
+<body ng-cloak >
+	<div class="container-fluid text-center">
+		<div class=" row header">
+			<h1>ToDoApp</h1>
+		</div>
+		<hr>
+		<ng-view><ng-view>
+		
+	</div>
+
+<script src="/lib/jquery.min.js"></script>
+<script src="/lib/angular/angular.js"></script>
+<script src="/lib/angular/angular-resource.js"></script>
+<script src="/lib/underscore-1.4.4.min.js"></script>
+<script src="/js/app.js"></script>
+<script type="text/javascript" src="/js/controllers/LoginController.js"></script>
+<script type="text/javascript" src="/js/controllers/SignupController.js"></script>
+<script src="/lib/bootstrap.min.js"></script>
+</body>
+</html>
