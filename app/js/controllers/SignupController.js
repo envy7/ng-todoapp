@@ -1,7 +1,7 @@
 'use strict';
 
 todoApp.controller('SignupController',
-	function SignupController($scope){
+	function SignupController($scope, userData){
 		$scope.user = {
 			firstname: 'John',
 			image: '/img/profile.jpg'
@@ -13,6 +13,7 @@ todoApp.controller('SignupController',
 
 		$scope.saveuser = function(user, signupForm){
 			if(signupForm.$valid){
+				userData.save(user);
 				window.alert('user ' + user.firstname + ' saved!');
 			}
 		};
