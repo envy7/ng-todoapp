@@ -37,7 +37,7 @@
 		    	</div>
 		    	<hr>
 		    	<div class="row">
-		    		<div class="col-md-12"><button value="submit">Submit</button><button ng-click = "cancel()">Cancel</button></div>
+		    		<div class="col-md-12"><button ng-disabled = "signupForm.$invalid" ng-click = "saveuser(user, signupForm)" value="submit">Submit</button><button ng-click = "cancel()">Cancel</button></div>
 		    	</div>	
 			</form>
 
@@ -48,7 +48,7 @@
 			<h2>{{user.firstname}}'s profile photo</h2>
 			<br>
 		</div>
-		<div class="row" style="padding:20px">
+		<div class="row" style="padding:20px;padding-top:0px">
 			<img  style="display:block;margin:0 auto" class="img-responsive" ng-src="{{user.image}}">
 		</div>
 	</div>

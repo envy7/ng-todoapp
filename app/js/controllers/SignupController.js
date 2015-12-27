@@ -9,6 +9,12 @@ todoApp.controller('SignupController',
 
 		$scope.cancel = function(){
 			window.location = '/signup';
-		}
+		};
+
+		$scope.saveuser = function(user, signupForm){
+			if(signupForm.$valid){
+				window.alert('user ' + user.firstname + ' saved!');
+			}
+		};
 	}
 )
