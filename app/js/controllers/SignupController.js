@@ -7,6 +7,8 @@ todoApp.controller('SignupController',
 			image: '/img/profile.jpg'
 		};
 
-		
+		$scope.cancel = function(){
+			window.location = '/signup';
+		}
 	}
 )
