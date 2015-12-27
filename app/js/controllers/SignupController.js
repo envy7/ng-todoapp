@@ -6,5 +6,7 @@ todoApp.controller('SignupController',
 			firstname: 'John',
 			image: '/img/profile.jpg'
 		};
+
+		
 	}
 )
