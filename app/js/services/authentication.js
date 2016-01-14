@@ -24,7 +24,7 @@ todoApp.factory('Authentication',
         email: user.email,
         password: user.password
       }).then(function(regUser) {
-        $location.path('/tasks');
+        $location.path('/entries');
       }).catch(function(error) {
        $rootScope.message = error.message;
       });

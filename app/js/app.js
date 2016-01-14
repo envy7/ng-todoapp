@@ -12,9 +12,9 @@ todoApp.config(['$routeProvider', function($routeProvider) {
       templateUrl: 'views/register.html',
       controller: 'RegistrationController'
     }).
-    when('/tasks', {
-      templateUrl: 'views/tasks.html',
-      controller: 'SuccessController',
+    when('/entries', {
+      templateUrl: 'views/entries.html',
+      controller: 'EntriesController',
       resolve:{
         currentAuth: function(Authentication){
           return Authentication.requireAuth();
