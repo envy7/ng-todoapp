@@ -6,13 +6,26 @@
   </div>
   <form class="formgroup addmeeting cf" name="myForm" ng-submit="addEntry()" novalidate>
 
-  	<div class="inputwrapper">
-  		<input type="text" name="entryheading" placeholder="Entry Heading" ng-model="entryheading" ng-required="true">
-  		<textarea rows="5" coloums="50" type="text" name="entrydetails"
-  		placeholder="Type in your entry details" ng-model="entrydetails" ng-required="true">
-  		</textarea>
-  		<button type="submit" class="btn" ng-disabled="myForm.$invalid">Add Entry</button>
-  	</div>
-  	
+    <div class="inputwrapper">
+      <input type="text" name="entryheading" placeholder="Entry Heading" ng-model="entryheading" ng-required="true">
+      <textarea rows="5" coloums="50" type="text" name="entrydetails"
+      placeholder="Type in your entry details" ng-model="entrydetails" ng-required="true">
+      </textarea>
+      <button type="submit" class="btn" ng-disabled="myForm.$invalid">Add Entry</button>
+    </div>
   </form>
 </div><!-- meetings cf -->
+<br>
+<br>
+
+<div class="card cf">
+  <h1 class="textintro">Your Entries</h2>
+  <br>
+  <div class="meeting card cf" ng-repeat="(key, entry) in entries" style="margin-bottom:10px;">
+    <button class="btn btn-delete tooltip" ng-click="deleteEntry(key)">
+      <span>Delete entry</span>
+    </button>
+    <h2 class="text underlined" >{{entry.heading}}</h2><br>
+    <p style= "font-size:20px" class="text">{{entry.details}}</p>
+  </div>
+</div>

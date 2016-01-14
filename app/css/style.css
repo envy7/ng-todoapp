@@ -497,6 +497,10 @@ nav li a:hover {
   color: #E76C5A;
 }
 
+.underlined{
+  text-decoration: underline; 
+}
+
 .userinfo {
   text-align: center;
   font-family: Lato, 'Helvetica Nueue', Helvetica, Arial, sans-serif;
