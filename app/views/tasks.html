@@ -1,0 +1,17 @@
+<div class="card meetings cf">
+
+  <div class="textintro">
+    <h1>Add your Diary Entry</h1>
+    <br>
+  </div>
+  <form class="formgroup addmeeting cf" name="myForm" ng-submit="addEntry" novalidate>
+
+  	<div class="inputwrapper">
+  		<input type="text" name="entryheading" placeholder="Entry Heading" ng-model="entryheading" ng-required="true">
+  		<textarea rows="5" coloums="50" type="text" name="entrydetails"
+  		placeholder="type in your entry details" ng-model="entrydetails" ng-required="true">
+  		</textarea>
+  	</div>
+  	<button type="submit" class="btn" ng-disabled="myForm.$invalid">Add</button>
+  </form>
+</div><!-- meetings cf -->

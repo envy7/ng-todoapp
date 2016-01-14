@@ -1,0 +1,8 @@
+<div ng-controller = "RegistrationController">  
+  <div class="branding"><a ng-href="#/login">angularJS</a></div>
+  <ul>
+    <li ng-hide="currentUser"><a ng-href="#/login">Login</a></li>
+    <li ng-hide="currentUser"><a ng-href="#/register">Register</a></li>
+    <li><a ng-href="#/logout" ng-show="currentUser" ng-click="logout()">LogOut</a></li>
+  </ul>
+</div>

@@ -1,18 +1,27 @@
-'use strict';
+var todoApp = angular.module('todoApp', ['ngRoute', 'firebase'])
+                .constant('FIREBASE_URL', 'https://todoapp7.firebaseIO.com/')
 
-var todoApp = angular.module('todoApp', ['ngResource'])
-	.config(function ($routeProvider, $locationProvider){
-		$routeProvider.when('/login',
-            {
-                templateUrl: 'templates/login.html',
-                controller: 'LoginController'
-            });
-		$routeProvider.when('/signup',
-            {
-                templateUrl: 'templates/signup.html',
-                controller: 'SignupController'
-            });
-		$routeProvider.otherwise({redirectTo: '/login'});
-		$locationProvider.html5Mode(true);
-	});
-   
+
+todoApp.config(['$routeProvider', function($routeProvider) {
+  $routeProvider.
+    when('/login', {
+      templateUrl: 'views/login.html',
+      controller: 'RegistrationController'
+    }).
+    when('/register', {
+      templateUrl: 'views/register.html',
+      controller: 'RegistrationController'
+    }).
+    when('/tasks', {
+      templateUrl: 'views/tasks.html',
+      controller: 'SuccessController',
+      resolve:{
+        currentAuth: function(Authentication){
+          return Authentication.requireAuth();
+        }
+      }
+    }).
+    otherwise({
+      redirectTo: '/login'
+    });
+}]);
