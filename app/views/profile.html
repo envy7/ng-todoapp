@@ -6,13 +6,15 @@
       <br>
       <img ng-src="{{currentUser.profileimgurl}}" style="width:50%">
     </div>
-    <h2>Name: {{currentUser.firstname}} {{currentUser.lastname}}</h2>
+    <h2>Name: {{currentUser.firstname}} {{currentUser.lastname}}</h2> 
   </div><!-- meetings cf -->
   <br>
   <div class="card cf" style="position:relative">
     <h1>Hobbies</h1>
-    <button class="btn" ng-hide= "edit" ng-click="editstart()" style="position:absolute; top:8px;right:8px">+</button>
-    <button class="btn" ng-show= "edit" ng-click="editstop()" style="position:absolute; top:8px;right:8px">Done</button>
+    <button class="btn tooltip" ng-hide= "edit" ng-click="editstart()" style="position:absolute; top:8px;right:8px;padding:4px 12px;">+
+      <span>Add hobby</span>
+    </button>
+    <button class="btn" ng-show= "edit" ng-click="editstop()" style="position:absolute; top:8px;right:8px;padding:4px 12px;">Done</button>
     <br>
     <form ng-show = "edit" name="myForm" ng-submit = "addHobby()" novalidate>
       <p>Add a hobby</p>
@@ -26,5 +28,8 @@
           <span>Delete hobby</span>
         </button>
     </span>
-  </div>
-</div>
+    <br>
+    <br>
+  </div><!-- hobbies card -->
+
+</div><!-- controller -->
