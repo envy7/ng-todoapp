@@ -103,6 +103,20 @@ body  {
   box-shadow: 0 1px 0 rgba(0,0,0,.25);
 }
 
+.smallcard {
+  font-size: 25px;
+  background-color: #2FCF2D;
+  color: white;
+  text-align: center;
+  border-radius: 2px;
+  box-shadow: 0 1px 0 rgba(0,0,0,.25);
+  padding: 5px;
+  margin:3px;
+  padding-right:65px;
+
+
+}
+
 @media all and (max-width: 400px) {
   main {
     width: 100%;

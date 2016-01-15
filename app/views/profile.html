@@ -1,10 +1,30 @@
-<div class="card meetings cf" ng-controller = "RegistrationController">
+<div ng-controller = "ProfileController">
 
-  <div class="textintro">
-    <h1>Profile</h1>
+  <div class="card cf" >
+    <div class="textintro">
+      <h1>Profile</h1>
+      <br>
+      <img ng-src="{{currentUser.profileimgurl}}" style="width:50%">
+    </div>
+    <h2>Name: {{currentUser.firstname}} {{currentUser.lastname}}</h2>
+  </div><!-- meetings cf -->
+  <br>
+  <div class="card cf" style="position:relative">
+    <h1>Hobbies</h1>
+    <button class="btn" ng-hide= "edit" ng-click="editstart()" style="position:absolute; top:8px;right:8px">+</button>
+    <button class="btn" ng-show= "edit" ng-click="editstop()" style="position:absolute; top:8px;right:8px">Done</button>
     <br>
-    <img ng-src="{{currentUser.profileimgurl}}" style="width:50%">
+    <form ng-show = "edit" name="myForm" ng-submit = "addHobby()" novalidate>
+      <p>Add a hobby</p>
+      <input style="width:50%" type="text" name="hobby" ng-required="true" ng-model="hobby">
+      <button type="submit" class="btn" ng-disabled="myForm.$invalid" style="margin-bottom:10px;">+</button>
+      <br>
+      <br>
+    </form>
+    <span class="smallcard" ng-repeat="(key, hobby) in hobbies" style="position:relative">{{hobby.name}}
+        <button class="btn btn-delete tooltip" style="position:absolute;top:8px;right:8px;background-color:#267499;" ng-click="deleteHobby(key)">
+          <span>Delete hobby</span>
+        </button>
+    </span>
   </div>
-  <h2>Name: {{currentUser.firstname}} {{currentUser.lastname}}</h2>
-  
-</div><!-- meetings cf -->
+</div>

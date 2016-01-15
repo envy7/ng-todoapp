@@ -5,6 +5,7 @@ todoApp.controller('EntriesController',
       var ref = new Firebase(FIREBASE_URL);
       var auth = $firebaseAuth(ref);
 
+      //code for controlling the edit entry functionality
       $scope.edit = false;
 
        $scope.editstart = function(){
