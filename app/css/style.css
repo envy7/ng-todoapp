@@ -224,7 +224,7 @@ input[type=radio] {
 .btn .btn-left { float: left; }
 .btn .btn-right { float: right; }
 .btn:hover { background-color: #DC322F; }
-.btn-edit:hover {background-color: #2DCF5D;}
+.btn-edit:hover {background-color: #2D8BCF;}
 
 .btn-list { background-image: url(../images/icons/icon_list.png); }
 .btn-checkin { background-color: #859835; background-image: url(../images/icons/icon_checkmark.png); }
@@ -232,7 +232,7 @@ input[type=radio] {
 .btn-love { background-image: url(../images/icons/icon_heart.png); }
 .btn-email { background-image: url(../images/icons/icon_email.png); }
 .btn-meeting { background-image:  url(../images/icons/icon_meeting.png); }
-.btn-edit { background-image: url(../images/icons/icon_edit.png);}
+.btn-edit { background-color:#2DCF5D; background-image: url(../images/icons/icon_edit.png);}
 
 .btn-pick {
   background: #2D8BCF url(../images/icons/icon_dice.png) 5px center no-repeat;

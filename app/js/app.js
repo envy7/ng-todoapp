@@ -21,6 +21,15 @@ todoApp.config(['$routeProvider', function($routeProvider) {
         }
       }
     }).
+    when('/profile', {
+      templateUrl: 'views/profile.html',
+      controller: 'RegistrationController',
+      resolve:{
+        currentAuth: function(Authentication){
+          return Authentication.requireAuth();
+        }
+      }
+    }).
     otherwise({
       redirectTo: '/login'
     });

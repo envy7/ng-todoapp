@@ -3,6 +3,7 @@
 
     <div class="textintro">
       <h1>Register</h1>
+      <img ng-show="user.profileimgurl" ng-src="{{user.profileimgurl}}" style="width:20%;padding-top:10px;padding-bottom:10px;">
       <p>To access site features</p>
       <p class="message" ng-show="message">{{ message }}</p>
     </div>
@@ -16,8 +17,11 @@
       <p class="error validation error" ng-show="myform.email.$invalid && myform.email.$touched">Must be a valid email</p>
       <input type="password" name="password" placeholder="Password" ng-model="user.password" ng-required="true">
       <p class="error validation error" ng-show="myform.password.$invalid && myform.password.$touched">Password is required</p>
+      <input type="url" name="profileimgurl" placeholder="link for profile image" ng-model="user.profileimgurl" ng-required="true">
+      <p class="error validation error" ng-show="myform.profileimgurl.$invalid && myform.profileimgurl.$touched">Invalid url</p>
     </fieldset>
 
+    
     <button type="submit" class="btn" ng-disabled ="myform.$invalid">Register</button>
     <p>or <a ng-href="#/login">login</a></p>
   </form>
