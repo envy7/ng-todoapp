@@ -149,8 +149,7 @@ h3{
   margin-bottom: 5px;
 }
 
-p {
-}
+
 
 a.small {
   line-height: 100%;
@@ -165,7 +164,7 @@ input {
   font-weight: 100;
   padding: 15px;
   margin: 5px 0;
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 100;
   color: #475B62;
   border: 1px solid #C5C5C5;
@@ -225,6 +224,7 @@ input[type=radio] {
 .btn .btn-left { float: left; }
 .btn .btn-right { float: right; }
 .btn:hover { background-color: #DC322F; }
+.btn-edit:hover {background-color: #2DCF5D;}
 
 .btn-list { background-image: url(../images/icons/icon_list.png); }
 .btn-checkin { background-color: #859835; background-image: url(../images/icons/icon_checkmark.png); }
@@ -232,6 +232,7 @@ input[type=radio] {
 .btn-love { background-image: url(../images/icons/icon_heart.png); }
 .btn-email { background-image: url(../images/icons/icon_email.png); }
 .btn-meeting { background-image:  url(../images/icons/icon_meeting.png); }
+.btn-edit { background-image: url(../images/icons/icon_edit.png);}
 
 .btn-pick {
   background: #2D8BCF url(../images/icons/icon_dice.png) 5px center no-repeat;
@@ -246,7 +247,6 @@ input[type=radio] {
   background-size: 20px 20px;
   padding: 5px 5px 5px 50px;
 }
-
 
 /*buttons*/
 
@@ -536,16 +536,25 @@ nav li a:hover {
 
 .addmeeting .inputwrapper textarea {
   width: 100%;
-  display: inline-block;
-  font-weight: 100;
   padding: 15px;
   margin: 5px 0;
   font-size: 20px;
-  font-weight: 100;
   color: #475B62;
   border: 1px solid #C5C5C5;
   border-radius: 4px;
   outline: 0;
+}
+
+.edit{
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0;
+  font-size: 20px;
+  color: #475B62;
+  border: 1px solid #C5C5C5;
+  border-radius: 4px;
+  outline: 0;
+  font-family: Arial;
 }
 
 .meetings {
@@ -583,6 +592,7 @@ nav li a:hover {
 .tooltip {
   position: relative;
 }
+
 
 .tooltip span {
   background: #FFF;
@@ -635,13 +645,20 @@ nav li a:hover {
 .checkinslist h3 { color: #657B83; }
 
 input.ng-invalid.ng-touched {
-  border: 1px solid #DA3637;
+  border: 2px solid #DA3637;
 }
 
 input.ng-valid.ng-touched {
-  border: 1px solid #509D12;
+  border: 2px solid #509D12;
 }
 
+textarea.ng-invalid.ng-touched {
+  border: 2px solid #DA3637;
+}
+
+textarea.ng-valid.ng-touched {
+  border: 2px solid #509D12;
+}
 .ng-invalid .btn {
   background: gray;
 }

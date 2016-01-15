@@ -5,6 +5,16 @@ todoApp.controller('EntriesController',
       var ref = new Firebase(FIREBASE_URL);
       var auth = $firebaseAuth(ref);
 
+      $scope.edit = false;
+
+       $scope.editstart = function(){
+        $scope.edit = true;
+      }
+
+      $scope.editstop = function(){
+        $scope.edit = false;
+      }
+
       auth.$onAuth(function(authUser){
         if(authUser){
           var entriesref = new Firebase(FIREBASE_URL + 'users/' + $rootScope.currentUser.$id + '/entries');

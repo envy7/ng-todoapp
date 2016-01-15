@@ -8,7 +8,7 @@
 
     <div class="inputwrapper">
       <input type="text" name="entryheading" placeholder="Entry Heading" ng-model="entryheading" ng-required="true">
-      <textarea rows="5" coloums="50" type="text" name="entrydetails"
+      <textarea style="font-family:Arial" rows="5" coloums="100" type="text" name="entrydetails"
       placeholder="Type in your entry details" ng-model="entrydetails" ng-required="true">
       </textarea>
       <button type="submit" class="btn" ng-disabled="myForm.$invalid">Add Entry</button>
@@ -22,10 +22,19 @@
   <h1 class="textintro">Your Entries</h2>
   <br>
   <div class="meeting card cf" ng-repeat="(key, entry) in entries" style="margin-bottom:10px;position:relative">
+
+    <button class="btn btn-edit tooltip"  style="position:absolute;top:8px;right:63px;" ng-click="editstart()" ng-disabled="edit">
+      <span>Edit entry</span>
+    </button>
     <button class="btn btn-delete tooltip" ng-click="deleteEntry(key)" style="position:absolute;top:8px;right:8px;">
       <span>Delete entry</span>
     </button>
-    <h2 class="text underlined" >{{entry.heading}}</h2><br>
-    <p style= "font-size:20px" class="text">{{entry.details}}</p>
+    <p style="font-size:20px;position:absolute;top:8px;left:8px;">{{entry.date |date}}</p>
+    <p style="font-size:15px;position:absolute;top:30px;left:8px;">{{entry.date |date : 'shortTime'}}</p>
+    <h2 class="text underlined">{{entry.heading}}</h2><br>
+    <p style= "font-size:20px" class="text" ng-hide="edit">{{entry.details}}</p>
+    <textarea rows="5" coloums="100" class="edit" ng-show="edit" ng-model="entry.details" ng-change="entries.$save(entry)">
+    </textarea>
+    <button ng-show="edit" type="submit" class="btn" ng-click="editstop()">Save Entry</button>
   </div>
 </div>
