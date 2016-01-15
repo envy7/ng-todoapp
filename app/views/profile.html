@@ -11,10 +11,10 @@
   <br>
   <div class="card cf" style="position:relative">
     <h1>Hobbies</h1>
-    <button class="btn tooltip" ng-hide= "edit" ng-click="editstart()" style="position:absolute; top:8px;right:8px;padding:4px 12px;">+
+    <button class="btn tooltip" ng-hide= "edit" ng-click="editstart()" style="position:absolute; top:8px;right:8px;padding:3px 12px;">+
       <span>Add hobby</span>
     </button>
-    <button class="btn" ng-show= "edit" ng-click="editstop()" style="position:absolute; top:8px;right:8px;padding:4px 12px;">Done</button>
+    <button class="btn" ng-show= "edit" ng-click="editstop()" style="position:absolute; top:8px;right:8px;padding:3px 12px;">Done</button>
     <br>
     <form ng-show = "edit" name="myForm" ng-submit = "addHobby()" novalidate>
       <p>Add a hobby</p>
@@ -23,11 +23,14 @@
       <br>
       <br>
     </form>
-    <span class="smallcard" ng-repeat="(key, hobby) in hobbies" style="position:relative">{{hobby.name}}
-        <button class="btn btn-delete tooltip" style="position:absolute;top:8px;right:8px;background-color:#267499;" ng-click="deleteHobby(key)">
+    <div style="flex-wrap:wrap;display:flex">
+      <span class="smallcard" ng-repeat="(key, hobby) in hobbies" style="position:relative">{{hobby.name}}
+        <button class="btn btn-delete tooltip" style="position:absolute;top:6px;right:6px;background-color:#267499;" ng-click="deleteHobby(key)">
           <span>Delete hobby</span>
         </button>
     </span>
+    </div>
+    
     <br>
     <br>
   </div><!-- hobbies card -->
