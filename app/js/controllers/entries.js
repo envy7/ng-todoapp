@@ -26,8 +26,11 @@ todoApp.controller('EntriesController',
               heading: $scope.entryheading,
               details: $scope.entrydetails,
               date: Firebase.ServerValue.TIMESTAMP
-            }).then(function(authUser){
-              $location.path('/entries');
+            }).then(function(){
+              $scope.myForm.$setPristine();
+              $scope.myForm.$setUntouched();
+              $scope.entryheading= '';
+              $scope.entrydetails= '';
             });//promise
           };//addentry
 
