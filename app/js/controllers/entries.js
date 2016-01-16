@@ -22,6 +22,14 @@ todoApp.controller('EntriesController',
           var entriesInfo = $firebaseArray(entriesref);
           $scope.entries = entriesInfo;
 
+          entriesInfo.$loaded().then(function(data){
+            $rootScope.numentries = entriesInfo.length;
+          });
+
+          entriesInfo.$watch(function(data){
+            $rootScope.numentries = entriesInfo.length;
+          });
+
           $scope.addEntry = function(){
             entriesInfo.$add({
               heading: $scope.entryheading,

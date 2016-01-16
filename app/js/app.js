@@ -21,6 +21,15 @@ todoApp.config(['$routeProvider', function($routeProvider) {
         }
       }
     }).
+    when('/contacts', {
+      templateUrl: 'views/contacts.html',
+      controller: 'ContactsController',
+      resolve:{
+        currentAuth: function(Authentication){
+          return Authentication.requireAuth();
+        }
+      }
+    }).
     when('/profile', {
       templateUrl: 'views/profile.html',
       controller: 'RegistrationController',

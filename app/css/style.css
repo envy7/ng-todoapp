@@ -86,6 +86,11 @@ body  {
   color: #555459;
   line-height: 1.5rem;
     *zoom: 1;
+    background-image: url(../images/main2_bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
 }
 
 .card {
@@ -193,6 +198,7 @@ input[type=radio] {
 }
 
 
+
 .ng-enter.ng-enter-active,
 .ng-leave {
   opacity: 1;
@@ -249,6 +255,7 @@ input[type=radio] {
 .btn-email { background-image: url(../images/icons/icon_email.png); }
 .btn-meeting { background-image:  url(../images/icons/icon_meeting.png); }
 .btn-edit { background-color:#2DCF5D; background-image: url(../images/icons/icon_edit.png);}
+.btn-search { background-image: url(../images/icons/icon_find.png);}
 
 .btn-pick {
   background: #2D8BCF url(../images/icons/icon_dice.png) 5px center no-repeat;
@@ -554,7 +561,7 @@ nav li a:hover {
   width: 100%;
   padding: 15px;
   margin: 5px 0;
-  font-size: 20px;
+  font-size: 25px;
   color: #475B62;
   border: 1px solid #C5C5C5;
   border-radius: 4px;
@@ -682,4 +689,13 @@ textarea.ng-valid.ng-touched {
 .error {
   color: red;
   padding-bottom: 10px;
+}
+
+.badge {
+  color:white;
+  border-radius:10px;
+  padding-left:5px;
+  padding-right:5px;
+  background-color:#c7512b;
+  font-size: 18px;
 }
