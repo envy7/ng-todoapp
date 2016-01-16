@@ -22,10 +22,12 @@ todoApp.controller('EntriesController',
           var entriesInfo = $firebaseArray(entriesref);
           $scope.entries = entriesInfo;
 
+          //for including the number of entries
           entriesInfo.$loaded().then(function(data){
             $rootScope.numentries = entriesInfo.length;
           });
 
+          //so that count changes as soon as the number of entries changes
           entriesInfo.$watch(function(data){
             $rootScope.numentries = entriesInfo.length;
           });
