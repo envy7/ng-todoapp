@@ -1,4 +1,4 @@
-# Angular Event Registration — Demo Application for Angular JS
+# Online Personal Diary — Demo Application for Angular JS
 
 This project is asample application demonstrating a more fully developed realistic single page
 angular application.
@@ -17,10 +17,6 @@ after you stop your server, you must change directory back to the root of the pr
 
 Then navigate your browser to `http://localhost:<port>/app/index.html` to see the app running in
 your browser.  The port may be configured in the scripts/web-server.js file near the top.
-
-#### Logging in
-you can inspect the files in the app/data/user directory, or just use the login "bob"/"bob".  Some of the functionality
-is disabled if you are not logged in.
 
 ### Server
 
