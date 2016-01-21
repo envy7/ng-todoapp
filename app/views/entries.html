@@ -19,7 +19,7 @@
 <br>
 
 <div class="card cf searchbox" ng-show="numentries">
-  <h1 align="center" style="background:white;margin-bottom:0px;">Your Entries&nbsp<span ng-show="numentries" class="badge">{{ numentries }}</span></h2>
+  <h1 align="center" style="margin-bottom:0px;position:relative">Your Entries&nbsp<span ng-show="numentries" class="badge">{{ numentries }}</span></h2>
   <input type="text" ng-model="query" placeholder="search" style="background-image:url(images/icons/icon_find.png);background-repeat:no-repeat;background-position:98% 50%">
   <br>
   <br>
@@ -27,12 +27,11 @@
 <br>
 <br>
 
-
 <div class="entrylist">
   
   <div class="meeting card cf" ng-repeat="(key, entry) in entries | filter:query | orderBy:'-date'" style="margin-bottom:10px;position:relative">
 
-    <button class="btn btn-edit tooltip"  style="position:absolute;top:8px;right:63px;" ng-click="editstart()" ng-disabled="edit">
+    <button class="btn btn-edit tooltip"  style="position:absolute;top:8px;right:63px;" ng-click="edit = !edit" ng-disabled="edit">
       <span>Edit entry</span>
     </button>
     <button class="btn btn-delete tooltip" ng-click="deleteEntry(key)" style="position:absolute;top:8px;right:8px;">
@@ -44,6 +43,6 @@
     <p style= "font-size:20px" class="text" ng-hide="edit">{{entry.details}}</p>
     <textarea rows="5" coloums="100" class="edit" ng-show="edit" ng-model="entry.details" ng-change="entries.$save(entry)">
     </textarea>
-    <button ng-show="edit" type="submit" class="btn" ng-click="editstop()">Save Entry</button>
+    <button ng-show="edit" type="submit" class="btn" ng-click="edit = !edit">Save Entry</button>
   </div>
 </div>

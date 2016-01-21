@@ -73,11 +73,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     clear: both;
 }
 
-html {
-  background-color: #F7F7F7;
-  min-height: 100%;
-  height: auto;
-}
+
 
 body  {
   font-family: Lato, 'Helvetica Nueue', Helvetica, Arial, sans-serif;
@@ -94,7 +90,7 @@ body  {
 }
 
 .card {
-  background: white;
+  background: rgba(255,255,255,0.8);
   width: 100%;
   max-width: 850px;
   margin-left: auto;
@@ -693,9 +689,21 @@ textarea.ng-valid.ng-touched {
 
 .badge {
   color:white;
-  border-radius:10px;
-  padding-left:5px;
-  padding-right:5px;
+  border-radius:20px;
+  padding-left:12px;
+  padding-right:12px;
   background-color:#c7512b;
   font-size: 18px;
+  position: absolute;
+  top:0px;
+}
+
+.top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  height: 68px;
+  background:rgba(255,255,255,0.8);
 }

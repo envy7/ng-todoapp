@@ -8,14 +8,6 @@ todoApp.controller('EntriesController',
       //code for controlling the edit entry functionality
       $scope.edit = false;
 
-       $scope.editstart = function(){
-        $scope.edit = true;
-      }
-
-      $scope.editstop = function(){
-        $scope.edit = false;
-      }
-
       auth.$onAuth(function(authUser){
         if(authUser){
           var entriesref = new Firebase(FIREBASE_URL + 'users/' + $rootScope.currentUser.$id + '/entries');
