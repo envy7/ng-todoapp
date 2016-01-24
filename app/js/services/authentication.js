@@ -50,6 +50,7 @@ todoApp.factory('Authentication',
           regUser: regUser.uid,
           firstname: user.firstname,
           lastname: user.lastname,
+          fullname: user.firstname + ' ' + user.lastname,
           email:  user.email,
           profileimgurl: user.profileimgurl
         }); //user info

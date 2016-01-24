@@ -1,0 +1,20 @@
+<div class="card meetings cf">
+
+  <div class="textintro">
+    <h1>Find Contacts</h1>
+    <br>
+    <input type="text" ng-model="query" placeholder="search" style="background-image:url(images/icons/icon_find.png);background-repeat:no-repeat;background-position:98% 50%">
+  </div>
+  <br>
+</div><!-- contacts cf -->
+<br>
+<br>
+<div class="contactslist">
+  
+  <!-- ng-if condition added so that user not shown in his contact list -->
+  <div class="meeting card cf" ng-repeat="user in users | filter:{fullname:query}" ng-if="user.regUser != currentUser.regUser" style="margin-bottom:10px;position:relative">
+    <img ng-src="{{user.profileimgurl}}" style="width:100px;height:50px;" align="left">
+    <h2 align="center">{{user.firstname}} {{user.lastname}}</h2>
+  </div>
+
+</div>  
