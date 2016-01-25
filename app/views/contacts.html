@@ -1,23 +1,40 @@
-<div class="card meetings cf">
+<div class="card meetings cf" style="position:relative">
 
+  <button class="btn tooltip" ng-hide= "search" style="position:absolute; top:8px;right:8px;padding:3px 12px;" ng-click="search = !search">+
+      <span>Add Contacts</span>
+  </button>
+  <button class="btn" ng-show= "search" style="position:absolute; top:8px;right:8px;padding:3px 12px;" ng-click="search = !search">Done</button>
   <div class="textintro">
-    <h1>Find Contacts</h1>
+    <h1 ng-show="search">Find Contacts</h1>
+    <h1 ng-hide="search">Your Contacts</h1>
     <br>
-    <input type="text" ng-model="query" placeholder="search" style="background-image:url(images/icons/icon_find.png);background-repeat:no-repeat;background-position:98% 50%">
+    <form name="myForm">
+      <input type="text" ng-model="query" placeholder="search" style="background-image:url(images/icons/icon_find.png);background-repeat:no-repeat;background-position:98% 50%">
+    </form>
+    
   </div>
   <br>
 </div><!-- contacts cf -->
 <br>
 <br>
-<div class="contactslist">
-  
-  <!-- ng-if condition added so that user not shown in his contact list -->
-  <div class="meeting card cf" ng-repeat="(key, user) in users | filter:{fullname:query}" ng-if="user.regUser != currentUser.regUser" style="margin-bottom:10px;position:relative">
-    <img ng-src="{{user.profileimgurl}}" style="width:100px;height:50px;" align="left">
-    <h2 align="center">{{user.firstname}} {{user.lastname}}</h2>
-    <button class="btn btn-addfriend tooltip" align="right" style="position:absolute;top:20px;right:5px;background-color:#fff" ng-click="addcontacts(user)">
-      <span>Add friend</span>
-    </button>
-  </div>
 
-</div>  
+  
+<!-- ng-if condition added so that user not shown in his contact list -->
+<div class="meeting card cf" ng-repeat="(key, user) in users | filter:{fullname:query}" ng-if="user.regUser != currentUser.regUser" style="margin-bottom:10px;position:relative" ng-show="query && search">
+  <img ng-src="{{user.profileimgurl}}" style="width:100px;height:50px;" align="left">
+  <h2 align="center">{{user.firstname}} {{user.lastname}}</h2>
+  <button class="btn btn-addfriend tooltip" align="right" style="position:absolute;top:20px;right:5px;background-color:#fff" ng-click="addcontacts(user)">
+    <span>Add Contact</span>
+  </button>
+</div><!-- searching contacts-->
+
+
+<div class="meeting card cf" ng-repeat = "(key, contact) in contacts | filter:{fullname:query}" style="margin-bottom:10px;position:relative" ng-hide="search">
+  <img ng-src="{{contact.profileimgurl}}" style="width:100px;height:50px;" align="left">
+  <h2 style="position: absolute; top:15px;left:45%">{{contact.firstname}} {{contact.lastname}}</h2>
+  <button class="btn btn-delete tooltip" align="right" style="position:absolute;top:20px;right:20px;" ng-click="delcontacts(key)">
+    <span>Remove Contact</span>
+  </button>
+</div><!--listing contacts-->
+
+  

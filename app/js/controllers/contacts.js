@@ -5,6 +5,8 @@ todoApp.controller('ContactsController',
 		var ref = new Firebase(FIREBASE_URL);
     var auth = $firebaseAuth(ref);
 
+    $scope.search = false;
+
       	auth.$onAuth(function(authUser){
         if(authUser){
           //for searching contacts
@@ -26,14 +28,18 @@ todoApp.controller('ContactsController',
               email:  user.email,
               profileimgurl: user.profileimgurl,
               date: Firebase.ServerValue.TIMESTAMP
-            });/*.then(function(){
+            }).then(function(){
               $scope.myForm.$setPristine();
               $scope.myForm.$setUntouched();
-              $scope.entryheading= '';
-              $scope.entrydetails= '';
-            });promise*/
+              $scope.query = '';
+            });//promise
           };//addentry
           
+        $scope.delcontacts = function(key){
+            contactsInfo.$remove(key);
+          };//deleteEntry  
+
+
         }//userAuthenticated
       });//on auth    
 
