@@ -252,6 +252,7 @@ input[type=radio] {
 .btn-meeting { background-image:  url(../images/icons/icon_meeting.png); }
 .btn-edit { background-color:#5BE021; background-image: url(../images/icons/icon_edit.png);}
 .btn-search { background-image: url(../images/icons/icon_find.png);}
+.btn-addfriend { background-image: url(../images/icons/icon_addfriend.png);}
 
 .btn-pick {
   background: #2D8BCF url(../images/icons/icon_dice.png) 5px center no-repeat;

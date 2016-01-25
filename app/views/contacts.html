@@ -12,9 +12,12 @@
 <div class="contactslist">
   
   <!-- ng-if condition added so that user not shown in his contact list -->
-  <div class="meeting card cf" ng-repeat="user in users | filter:{fullname:query}" ng-if="user.regUser != currentUser.regUser" style="margin-bottom:10px;position:relative">
+  <div class="meeting card cf" ng-repeat="(key, user) in users | filter:{fullname:query}" ng-if="user.regUser != currentUser.regUser" style="margin-bottom:10px;position:relative">
     <img ng-src="{{user.profileimgurl}}" style="width:100px;height:50px;" align="left">
     <h2 align="center">{{user.firstname}} {{user.lastname}}</h2>
+    <button class="btn btn-addfriend tooltip" align="right" style="position:absolute;top:20px;right:5px;background-color:#fff" ng-click="addcontacts(user)">
+      <span>Add friend</span>
+    </button>
   </div>
 
 </div>  
