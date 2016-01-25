@@ -4,8 +4,9 @@
     <li ng-hide="currentUser"><a ng-href="#/login"><h2 style="margin:0px">Login</h2></a></li>
     <li ng-hide="currentUser"><a ng-href="#/register"><h2 style="margin:0px">Register</h2></a></li>
     <li><a ng-href="#/logout" ng-show="currentUser" ng-click="logout()"><h2 style="margin:0px">LogOut</h2></a></li>
-    <li ng-show="currentUser"><a ng-href="#/entries"><h2 style="margin:0px">Diary</h2></a></li>
+    
     <li ng-show="currentUser"><a ng-href="#/profile"><h2 style="margin:0px">Profile</h2></a></li>
     <li ng-show="currentUser"><a href="#/contacts"><h2 style="margin:0px">Contacts</h2></a></li>
+    <li ng-show="currentUser"><a ng-href="#/entries"><h2 style="margin:0px">Diary</h2></a></li>
   </ul>
 </div>

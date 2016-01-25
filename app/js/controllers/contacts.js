@@ -19,6 +19,16 @@ todoApp.controller('ContactsController',
           var contactsInfo = $firebaseArray(contactsref);
           $scope.contacts = contactsInfo;
 
+          //for including the number of contacts
+          contactsInfo.$loaded().then(function(data){
+            $rootScope.numcontacts = contactsInfo.length;
+          });
+
+          //so that count changes as soon as the number of contacts changes
+          contactsInfo.$watch(function(data){
+            $rootScope.numcontacts = contactsInfo.length;
+          });
+
           $scope.addcontacts = function(user){
             contactsInfo.$add({
               contactId: user.regUser,

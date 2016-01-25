@@ -104,6 +104,11 @@ body  {
   box-shadow: 0 1px 0 rgba(0,0,0,.25);
 }
 
+.card:hover {
+  box-shadow: 0 13px 6px -6px rgba(0,0,0,0.65);
+  transition: all 0.3s ease ;
+}
+
 .smallcard {
   font-size: 25px;
   background-color: #2FCF2D;
@@ -707,4 +712,13 @@ textarea.ng-valid.ng-touched {
   width: 100%;
   height: 68px;
   background:rgba(255,255,255,0.9);
+}
+
+.overlay {
+  position: absolute;
+  top:0px;
+  left:0px;
+  height:100%;
+  width:100%;
+  background-color:rgba(0,0,0,0.9);
 }

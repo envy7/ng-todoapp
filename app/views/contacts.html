@@ -5,8 +5,8 @@
   </button>
   <button class="btn" ng-show= "search" style="position:absolute; top:8px;right:8px;padding:3px 12px;" ng-click="search = !search">Done</button>
   <div class="textintro">
-    <h1 ng-show="search">Find Contacts</h1>
-    <h1 ng-hide="search">Your Contacts</h1>
+    <h1 align="center" ng-show="search">Find Contacts</h1>
+    <h1 align="center" ng-hide="search" style="position:relative">Your Contacts&nbsp<span ng-show="numcontacts" class="badge">{{ numcontacts }}</span></h1>
     <br>
     <form name="myForm">
       <input type="text" ng-model="query" placeholder="search" style="background-image:url(images/icons/icon_find.png);background-repeat:no-repeat;background-position:98% 50%">
