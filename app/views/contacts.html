@@ -23,7 +23,7 @@
 <div class="meeting card cf" ng-repeat="(key, user) in users | filter:{fullname:query}" ng-if="user.regUser != currentUser.regUser" style="margin-bottom:10px;position:relative" ng-show="query && search">
   <img ng-src="{{user.profileimgurl}}" style="width:100px;height:50px;" align="left">
   <h2 align="center">{{user.firstname}} {{user.lastname}}</h2>
-  <a  style="position:absolute;top:20px;right:80px;" class="btn btn-seeprofile" href="#/contactprofile/{{contact.contactId}}"></a>
+  <a  style="position:absolute;top:20px;right:80px;" class="btn btn-seeprofile tooltip" href="#/contactprofile/{{user.regUser}}"><span>See profile</span></a>
   <button class="btn btn-addfriend tooltip" align="right" style="position:absolute;top:20px;right:5px;background-color:#fff" ng-click="addcontacts(user)">
     <span>Add Contact</span>
   </button>
