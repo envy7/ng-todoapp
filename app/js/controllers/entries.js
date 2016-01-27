@@ -28,17 +28,19 @@ todoApp.controller('EntriesController',
             entriesInfo.$add({
               heading: $scope.entryheading,
               details: $scope.entrydetails,
+              image: $scope.entryimage,
               date: Firebase.ServerValue.TIMESTAMP
             }).then(function(){
               $scope.myForm.$setPristine();
               $scope.myForm.$setUntouched();
               $scope.entryheading= '';
               $scope.entrydetails= '';
+              $scope.entryimage= '';
             });//promise
           };//addentry
 
           $scope.deleteEntry = function(key){
-            entriesInfo.$remove(key);
+            entriesInfo.$remove(entriesInfo.length - key -1);
           };//deleteEntry
         }//userAuthenticated
       });//on auth    

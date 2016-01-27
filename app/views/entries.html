@@ -11,6 +11,7 @@
       <textarea style="font-family:Arial" rows="5" coloums="100" type="text" name="entrydetails"
       placeholder="Type in your entry details" ng-model="entrydetails" ng-required="true">
       </textarea>
+      <input type="url" name="imageurl" placeholder="add image url optional" ng-model="entryimage">
       <button type="submit" class="btn" ng-disabled="myForm.$invalid">Add Entry</button>
     </div>
   </form>
@@ -42,8 +43,11 @@
     <p style="font-size:15px;position:absolute;top:30px;left:8px;">{{entry.date |date : 'shortTime'}}</p>
     <h2 class="text underlined">{{entry.heading}}</h2><br>
     <p style= "font-size:20px" class="text" ng-hide="edit">{{entry.details}}</p>
+    <br>
+    <img style="max-width:640px;max-height:360px" ng-src="{{entry.image}}">
     <textarea rows="5" coloums="100" class="edit" ng-show="edit" ng-model="entry.details" ng-change="entries.$save(entry)">
     </textarea>
+    <input class="edit" placeholder="add image url" ng-show="edit" ng-model="entry.image" ng-change="entries.$save(entry)">
     <button ng-show="edit" type="submit" class="btn" ng-click="edit = !edit">Save Entry</button>
   </div>
 </div>
