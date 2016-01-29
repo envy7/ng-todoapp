@@ -7,6 +7,7 @@ todoApp.controller('EntriesController',
 
       //code for controlling the edit entry functionality
       $scope.edit = false;
+      $scope.imageurl = false;
 
       auth.$onAuth(function(authUser){
         if(authUser){

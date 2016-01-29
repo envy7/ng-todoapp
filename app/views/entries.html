@@ -2,7 +2,7 @@
 
   <div class="textintro">
     <h1>Add your Diary Entry</h1>
-    <img src="images/icons/icon_addimage.ico" style="position:absolute;top:18px;right:45px;width:50px;">
+    <img src="images/icons/icon_addimage.ico" style="position:absolute;top:18px;right:45px;width:50px;cursor:pointer" ng-click="imageurl = !imageurl">
     <br>
   </div>
   <form class="formgroup addmeeting cf" name="myForm" ng-submit="addEntry()" novalidate>
@@ -12,8 +12,8 @@
       <textarea style="font-family:Arial" rows="5" coloums="100" type="text" name="entrydetails"
       placeholder="Type in your entry details" ng-model="entrydetails" ng-required="true">
       </textarea>
-      <input type="url" name="imageurl" placeholder="add image url optional" ng-model="entryimage">
-      <button type="submit" class="btn" ng-disabled="myForm.$invalid">Add Entry</button>
+      <input type="url" name="imageurl" placeholder="add image url optional" ng-model="entryimage" ng-show="imageurl">
+      <button type="submit" class="btn" ng-disabled="myForm.$invalid" ng-click="imageurl = !imageurl">Add Entry</button>
     </div>
   </form>
 </div><!-- meetings cf -->
