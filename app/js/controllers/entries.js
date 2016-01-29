@@ -10,10 +10,16 @@ todoApp.controller('EntriesController',
 
       //code for controlling the add image functionality
       $scope.imageurl = false;
+      $scope.video = false;
       $scope.entryimage = null;
+      $scope.videourl = null;
       $scope.hideimage = function(){
         if($scope.imageurl = true){
           $scope.imageurl = false;
+        }
+
+        if($scope.video = true){
+          $scope.video = false;
         }
       }
 
@@ -38,6 +44,7 @@ todoApp.controller('EntriesController',
               heading: $scope.entryheading,
               details: $scope.entrydetails,
               image: $scope.entryimage,
+              videourl: 'https://www.youtube.com/embed/' + $scope.videoid,
               date: Firebase.ServerValue.TIMESTAMP
             }).then(function(){
               $scope.myForm.$setPristine();
@@ -45,6 +52,7 @@ todoApp.controller('EntriesController',
               $scope.entryheading= '';
               $scope.entrydetails= '';
               $scope.entryimage= '';
+              $scope.videoid = '';
             });//promise
           };//addentry
 

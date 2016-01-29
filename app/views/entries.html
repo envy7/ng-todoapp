@@ -2,6 +2,7 @@
 
   <div class="textintro">
     <h1>Add your Diary Entry</h1>
+    <img src="images/icons/icon_youtube.png" style="position:absolute;top:20px;right:110px;width:50px;cursor:pointer" ng-click="video =!video">
     <img src="images/icons/icon_addimage.ico" style="position:absolute;top:18px;right:45px;width:50px;cursor:pointer" ng-click="imageurl = !imageurl">
     <br>
   </div>
@@ -13,6 +14,7 @@
       placeholder="Type in your entry details" ng-model="entrydetails" ng-required="true">
       </textarea>
       <input type="url" name="imageurl" placeholder="add image url" ng-model="entryimage" ng-show="imageurl">
+      <input type="text" name="videoid" placeholder="add youtube video id" ng-model="videoid" ng-show="video">
       <button type="submit" class="btn" ng-disabled="myForm.$invalid" ng-click="hideimage()">Add Entry</button>
     </div>
   </form>
@@ -46,6 +48,7 @@
     <p style= "font-size:20px" class="text" ng-hide="edit">{{entry.details}}</p>
     <br>
     <img style="max-width:640px;max-height:360px" ng-src="{{entry.image}}">
+    <iframe width="640px" height="360px" ng-src="{{entry.videourl | trusted}}" ng-show="entry.videourl"></iframe>
     <textarea rows="5" coloums="100" class="edit" ng-show="edit" ng-model="entry.details" ng-change="entries.$save(entry)">
     </textarea>
     <input class="edit" placeholder="add image url" ng-show="edit" ng-model="entry.image" ng-change="entries.$save(entry)">
