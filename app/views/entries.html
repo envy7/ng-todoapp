@@ -52,6 +52,7 @@
     <textarea rows="5" coloums="100" class="edit" ng-show="edit" ng-model="entry.details" ng-change="entries.$save(entry)">
     </textarea>
     <input class="edit" placeholder="add image url" ng-show="edit" ng-model="entry.image" ng-change="entries.$save(entry)">
+    <input class="edit" placeholder="add video id" ng-show="edit" ng-model="entry.videourl" ng-change="entries.$save(entry)">
     <button ng-show="edit" type="submit" class="btn" ng-click="edit = !edit">Save Entry</button>
   </div>
 </div>
