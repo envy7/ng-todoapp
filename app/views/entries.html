@@ -44,14 +44,15 @@
     </button>
     <p style="font-size:20px;position:absolute;top:8px;left:8px;">{{entry.date |date}}</p>
     <p style="font-size:15px;position:absolute;top:30px;left:8px;">{{entry.date |date : 'shortTime'}}</p>
-    <h2 class="text underlined">{{entry.heading}}</h2><br>
+    <h1 class="text" ng-hide="edit">{{entry.heading}}</h1><br>
+    <input class="edit" ng-show="edit" ng-model="entry.heading" ng-change="entries.$save(entry)">
     <p style= "font-size:20px" class="text" ng-hide="edit">{{entry.details}}</p>
-    <br>
-    <img style="max-width:640px;max-height:360px" ng-src="{{entry.image}}">
-    <iframe width="640px" height="360px" ng-src="{{entry.videourl | trusted}}" ng-show="entry.videourl"></iframe>
     <textarea rows="5" coloums="100" class="edit" ng-show="edit" ng-model="entry.details" ng-change="entries.$save(entry)">
     </textarea>
+    <br>
+    <img style="max-width:640px;max-height:360px" ng-src="{{entry.image}}">
     <input class="edit" placeholder="add image url" ng-show="edit" ng-model="entry.image" ng-change="entries.$save(entry)">
+    <iframe width="640px" height="360px" ng-src="{{entry.videourl | trusted}}" ng-show="entry.videourl"></iframe>
     <input class="edit" placeholder="add video id" ng-show="edit" ng-model="entry.videourl" ng-change="entries.$save(entry)">
     <button ng-show="edit" type="submit" class="btn" ng-click="edit = !edit">Save Entry</button>
   </div>
