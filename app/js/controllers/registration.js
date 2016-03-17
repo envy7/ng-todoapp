@@ -14,4 +14,6 @@ todoApp.controller('RegistrationController',
   		$scope.register = function(){
   			Authentication.register($scope.user); 
   		};//register
+
+      
 }]);//controller

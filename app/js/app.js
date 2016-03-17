@@ -32,7 +32,7 @@ todoApp.config(['$routeProvider', function($routeProvider) {
     }).
     when('/profile', {
       templateUrl: 'views/profile.html',
-      controller: 'RegistrationController',
+      controller: 'ProfileController',
       resolve:{
         currentAuth: function(Authentication){
           return Authentication.requireAuth();
