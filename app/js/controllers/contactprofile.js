@@ -1,4 +1,4 @@
-todoApp.controller('ProfileController',
+todoApp.controller('ContactProfileController',
 	['$scope', '$rootScope', '$firebaseObject', '$firebaseAuth', '$routeParams', '$firebaseArray', 'FIREBASE_URL' ,
 	function($scope, $rootScope, $firebaseObject, $firebaseAuth, $routeParams, $firebaseArray, FIREBASE_URL){
 
