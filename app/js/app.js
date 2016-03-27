@@ -41,7 +41,7 @@ todoApp.config(['$routeProvider', function($routeProvider) {
     }).
     when('/contactprofile/:cId', {
       templateUrl: 'views/contactprofile.html',
-      controller: 'COntactProfileController'
+      controller: 'ContactProfileController'
     }).
     otherwise({
       redirectTo: '/login'

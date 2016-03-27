@@ -12,7 +12,8 @@ todoApp.controller('EntriesController',
       $scope.imageurl = false;
       $scope.video = false;
       $scope.entryimage = null;
-      $scope.videourl = null;
+      $scope.videoid = null;
+      
       $scope.hideimage = function(){
         if($scope.imageurl = true){
           $scope.imageurl = false;
