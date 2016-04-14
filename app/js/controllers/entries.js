@@ -8,7 +8,7 @@ todoApp.controller('EntriesController',
       //code for controlling the edit entry functionality
       $scope.edit = false;
 
-      //code for controlling the add image functionality
+      //code for controlling the add image and add video functionality
       $scope.imageurl = false;
       $scope.video = false;
       $scope.entryimage = null;
@@ -23,6 +23,8 @@ todoApp.controller('EntriesController',
           $scope.video = false;
         }
       }
+
+
 
       auth.$onAuth(function(authUser){
         if(authUser){
@@ -41,11 +43,18 @@ todoApp.controller('EntriesController',
           });
 
           $scope.addEntry = function(){
+            if($scope.videoid == null || $scope.videoid == ''){
+              $scope.videourl = null;
+            }
+
+            else{
+              $scope.videourl = 'https://www.youtube.com/embed/' + $scope.videoid;
+            }
             entriesInfo.$add({
               heading: $scope.entryheading,
               details: $scope.entrydetails,
               image: $scope.entryimage,
-              videourl: 'https://www.youtube.com/embed/' + $scope.videoid,
+              videourl: $scope.videourl,
               date: Firebase.ServerValue.TIMESTAMP
             }).then(function(){
               $scope.myForm.$setPristine();

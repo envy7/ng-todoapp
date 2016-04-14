@@ -1,5 +1,5 @@
 var todoApp = angular.module('todoApp', ['ngRoute', 'firebase'])
-                .constant('FIREBASE_URL', 'https://todoapp7.firebaseIO.com/')
+                .constant('FIREBASE_URL', 'https://todoapp7.firebaseIO.com/');
 
 
 todoApp.config(['$routeProvider', function($routeProvider) {
